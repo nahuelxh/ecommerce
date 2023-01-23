@@ -1,6 +1,11 @@
+
+
 export const Buscador = () => {
   return (
+
     //<div>🔍</div>
-    <img src= '/public/img/buscar.png' alt="imagen de buscador" />
+    
+    <img src='../img/buscar.png' alt='buscar' style={{width:'3rem' , height: '3rem'}} />
+
   )
 }

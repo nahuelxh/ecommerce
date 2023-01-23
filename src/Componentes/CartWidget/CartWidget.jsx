@@ -1,7 +1,12 @@
+
+
 const CartWidget = () => {
   return (
+
     //<div>🛒</div>
-    <img src='/public/img/tocadiscos.png' alt="imagen de tocadiscos" />
+      
+      <img src='../img/tocadiscos.png' alt='tocadiscos' style={{width:'3rem' , height: '3rem'}} />
+
   )
 }
 

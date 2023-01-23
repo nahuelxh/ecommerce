@@ -1,9 +1,13 @@
-const ItemListContainer = ( {saludo} ) => {
+
+
+function ItemListContainer({ saludo }) {
   return (
+
     <h2>
-        { saludo }
+      {saludo}
     </h2>
-  )
+    
+  );
 }
 
 export default ItemListContainer
