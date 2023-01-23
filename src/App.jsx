@@ -12,7 +12,7 @@ function App(props) {
 
     <>
     <NavBar />
-    <ItemListContainer saludo='Donde el tiempo y la distancia se juntan' />
+    <ItemListContainer saludo='Buenas canciones, siempre' />
     </>
 
   )
