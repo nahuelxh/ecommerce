@@ -1,13 +1,20 @@
+import { gFetch } from "../../Utlis/gFetch"
 
 
-function ItemListContainer({ saludo }) {
+
+export const ItemListContainer = ({ saludo }) => {
+  gFetch ()
+    .then (resResuelto => {
+      console.log (resResuelto)
+    })
+    .catch (error => console.log (error))
+    .finally (()=> console.log ('siempre y al último'))
+  
   return (
-
-    <h2>
-      {saludo}
-    </h2>
-    
-  );
+    <h1>
+      { saludo }
+    </h1>
+  )
 }
 
 export default ItemListContainer

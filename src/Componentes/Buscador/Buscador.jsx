@@ -1,5 +1,3 @@
-
-
 export const Buscador = () => {
   return (
 
@@ -9,3 +7,5 @@ export const Buscador = () => {
 
   )
 }
+
+export default Buscador

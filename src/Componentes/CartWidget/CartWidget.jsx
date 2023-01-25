@@ -1,11 +1,7 @@
-
-
-const CartWidget = () => {
+export const CartWidget = () => {
   return (
-
-    //<div>🛒</div>
       
-      <img src='../img/tocadiscos.png' alt='tocadiscos' style={{width:'3rem' , height: '3rem'}} />
+      <img src='../img/tocadiscos.png' alt='tocadiscos' style={{width:'3rem' , height: '3rem'}} /> //carrito
 
   )
 }
