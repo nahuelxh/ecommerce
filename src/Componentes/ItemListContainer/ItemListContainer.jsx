@@ -1,19 +1,46 @@
-import { gFetch } from "../../Utlis/gFetch"
+import { useEffect, useState } from "react"
+import { gFetch } from "../../Utils/gFetch"
 
 
 
 export const ItemListContainer = ({ saludo }) => {
-  gFetch ()
-    .then (resResuelto => {
-      console.log (resResuelto)
-    })
-    .catch (error => console.log (error))
-    .finally (()=> console.log ('siempre y al último'))
+  const [ productos, setProductos ] = useState ([])
+  const [ loading, setLoading ] = useState (true)
+
+  useEffect (()=>{
+    gFetch ()
+      .then (res => {
+        setProductos (res)
+      })
+      .catch (error => console.log (error))
+      .finally (()=> setLoading (false))
+  
+}, [])
+
+  console.log (productos)
   
   return (
-    <h1>
-      { saludo }
-    </h1>
+    <center>
+      <br />
+      { 
+      loading ? <img src='img/vinilocargando.gif' alt="vinilocargando" /> :
+
+      productos.map (producto =>  <div key={producto.id} className='card w-50 mt-3'>
+                                      <div className='card-header'>
+                                        Nombre: {producto.nombre}
+                                      </div>
+                                      <div className='card-body'>
+                                        <img src={producto.foto} alt="foto" className="w-50"/> <br /> <hr />
+                                        Categoría: {producto.categoría} <br />
+                                        Precio: {producto.precio}
+                                      </div>
+                                      <div className='card-footer'>
+                                        <button className="btn btn-outline-dark w-50">Detalle</button>
+                                      </div>
+                                    </div>)
+      }
+      <br />
+    </center>
   )
 }
 
