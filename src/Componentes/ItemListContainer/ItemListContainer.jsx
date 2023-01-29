@@ -23,7 +23,7 @@ export const ItemListContainer = ({ saludo }) => {
     <center>
       <br />
       { 
-      loading ? <img src='img/vinilocargando.gif' alt="vinilocargando" /> :
+      loading ? <img src='img/viniloanimado.gif' alt="vinilocargando" /> :
 
       productos.map (producto =>  <div key={producto.id} className='card w-50 mt-3'>
                                       <div className='card-header'>
@@ -39,7 +39,6 @@ export const ItemListContainer = ({ saludo }) => {
                                       </div>
                                     </div>)
       }
-      <br />
     </center>
   )
 }
