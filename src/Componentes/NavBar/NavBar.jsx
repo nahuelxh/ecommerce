@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link, NavLink } from 'react-router-dom';
 import { Buscador } from '../Buscador/Buscador';
 import CartWidget from '../CartWidget/CartWidget';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
@@ -11,18 +12,22 @@ const navBar = () => {
 
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#TocaDiscos">TocaDiscos</Navbar.Brand>
+        <NavLink to='/' > TocaDiscos </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#60/70s">60/70s</Nav.Link>
-            <Nav.Link href="#80s">80s</Nav.Link>
-            <Nav.Link href="#90s">90s</Nav.Link>
-            <Nav.Link href="#Actualidad">Actualidad</Nav.Link>
+            <NavLink to="/categoria/60y70s" className={({ isActive })=> isActive ? 'btn btn-secondary':'btn btn-outline-secondary' } >60y70s</NavLink>
+            <NavLink to="/categoria/80s" className={({ isActive })=> isActive ? 'btn btn-outline-secondary':'btn btn-secondary' } >80s</NavLink>
+            <NavLink to="/categoria/90s" className={({ isActive })=> isActive ? 'btn btn-secondary':'btn btn-outline-secondary' } >90s</NavLink>
+            <NavLink to="/categoria/actualidad" className={({ isActive })=> isActive ? 'btn btn-outline-secondary':'btn btn-secondary' } >actualidad</NavLink>
           </Nav>
           <Nav>
-            <CartWidget />
-            <Buscador />
+            <Link to='/CartWidget'>
+              <CartWidget/>
+            </Link>
+            <Link to='/Buscador'>
+              <Buscador />
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
