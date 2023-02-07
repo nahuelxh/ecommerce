@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
+import ItemDetail from "../ItemDetail/ItemDetail"
 
-const ItemDetailContainer = () => {
+export const ItemDetailContainer = () => {
 
     const { idProducto } = useParams ()
 
@@ -8,7 +9,9 @@ const ItemDetailContainer = () => {
     console.log(idProducto)
 
   return (
-    <div>ItemDetailContainer</div>
+    <div>
+      <ItemDetail />
+    </div>
   )
 }
 
