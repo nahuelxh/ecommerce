@@ -16,16 +16,19 @@ function App() {
   return (
     
     <BrowserRouter>
-      <NavBar />
-        <Routes>
-          <Route path='/' element={ <ItemListContainer saludo='Buenas canciones, siempre' /> } />
-          <Route path='/categoria/:idCategoria' element={ <ItemListContainer saludo='Buenas canciones, siempre' /> } />
-          <Route path='/detalle/:idProducto' element={ <ItemDetailContainer /> } />
-          <Route path='/cart' element={ <CartContainer /> } />
-          <Route path='/carrito' element={ <CartWidget /> } />
-          <Route path='*' element={ <Navigate to={ '/' } /> } />
-        </Routes>
-        <ItemCount />
+      <cartContextProvider>
+        <NavBar />
+        <div>
+          <Routes>
+            <Route path='/' element={ <ItemListContainer saludo='Buenas canciones, siempre' /> } />
+            <Route path='/categoria/:idCategoria' element={ <ItemListContainer saludo='Buenas canciones, siempre' /> } />
+            <Route path='/detalle/:idProducto' element={ <ItemDetailContainer /> } />
+            <Route path='/cart' element={ <CartContainer /> } />
+            <Route path='/carrito' element={ <CartWidget /> } />
+            <Route path='*' element={ <Navigate to={ '/' } /> } />
+          </Routes>
+        </div>  
+      </cartContextProvider>   
     </BrowserRouter>
 
 
