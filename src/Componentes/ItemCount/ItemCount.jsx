@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 
 const ItemCount = ({initial=1, stock=5, onAdd}) => {
@@ -9,8 +10,8 @@ const ItemCount = ({initial=1, stock=5, onAdd}) => {
     }
   }
 
-  const handleResta=() =>{
-    if(count > 1){
+  const handleRestar=() =>{
+    if(count > initial){
       setCount(count - 1)
     }
   }
@@ -32,7 +33,7 @@ const ItemCount = ({initial=1, stock=5, onAdd}) => {
           
         </div>
         <div className="col">
-          <button className="btn btn-outline-dark w-100" onclick= {handleResta}> - </button>
+          <button className="btn btn-outline-dark w-100" onclick= {handleRestar}> - </button>
 
         </div>
       </div>
@@ -40,7 +41,7 @@ const ItemCount = ({initial=1, stock=5, onAdd}) => {
         <button className="btn btn-outline-dark w-100" onclick= {handleOnAdd}> Agregar al carrito </button>
       </div>
 
-      </div>
+    </div>
   )
 }
 

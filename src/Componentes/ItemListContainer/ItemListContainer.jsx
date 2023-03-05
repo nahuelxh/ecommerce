@@ -45,7 +45,7 @@ export const ItemListContainer = ({ saludo }) => {
       
       loading
         ?
-          <img src='/public/img/viniloanimado.gif' alt="loading" />
+          <img src='/public/img/viniloanimado.gif' alt="loading"/>
         :
 
       <div style={{

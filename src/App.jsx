@@ -5,10 +5,10 @@ import NavBar from './Componentes/NavBar/NavBar';
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import ItemCount from './Componentes/ItemCount/ItemCount';
 import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer';
-import CartWidget from './Componentes/CartWidget/CartWidget';
-import { CartContainer } from './Componentes/CartContainer/CartContainer';
+import CartContainer from './Componentes/CartContainer/CartContainer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartContextProvider } from './context/CartContext';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   return (
     
     <BrowserRouter>
-      <cartContextProvider>
+      <CartContextProvider>
         <NavBar />
         <div>
           <Routes>
@@ -24,11 +24,10 @@ function App() {
             <Route path='/categoria/:idCategoria' element={ <ItemListContainer saludo='Buenas canciones, siempre' /> } />
             <Route path='/detalle/:idProducto' element={ <ItemDetailContainer /> } />
             <Route path='/cart' element={ <CartContainer /> } />
-            <Route path='/carrito' element={ <CartWidget /> } />
             <Route path='*' element={ <Navigate to={ '/' } /> } />
           </Routes>
         </div>  
-      </cartContextProvider>   
+      </CartContextProvider>   
     </BrowserRouter>
 
 
